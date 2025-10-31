@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+    box-sizing: border-box;
+    position: fixed;
     width: 100%;    
-    height: 80px;
     background-color: #f8f6f6;
     display: flex;
     justify-content: center;
     align-items: center;
 `
 
+
 export const Container = styled.div`
     width: 100%;
-    height: 80px;
     padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
@@ -63,4 +64,9 @@ export const MeuNome = styled.h1`
     font-style: normal;
     font-size: 1.5rem;
     color: #000;
+    cursor: pointer;
+`
+
+export const Img = styled.img`
+    width: 1.875rem;
 `

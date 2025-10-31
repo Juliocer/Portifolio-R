@@ -1,14 +1,23 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
+    box-sizing: border-box;
+    background-color: #f8f6f6;
     width: 100%;
-    max-width: 80%;
-    height: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+export const Container = styled.div`
+    width: 1140px;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    gap: 2rem;
+
+    padding: 8rem 0 5rem 0;
 `
 
 export const Row = styled.div`
@@ -20,58 +29,28 @@ export const Row = styled.div`
 export const Colmn = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
+    gap: 1.5rem;
 `
 
-export const Wrapper = styled.div`
-    background-color: #151515;
-    width: 100%;
-    height: 47px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
 
-export const BuscarInputContainer = styled.div`
-    width: 175px;
-    height: 30px;
-    background: #2d2d37;
-    border-radius: 8px;
-    padding: 2px 5px;
-    margin: 0 12px;
-`
-
-export const Menu = styled.a`
+export const H1 = styled.h1`
     font-family: 'Open-Sans';
     font-style: normal;
-    font-size: 12px;
-    line-height: 25px;
-    color: #fff;
-    margin-right: 12px;
-    text-decoration: none;
+    font-size: 3rem;
+    color: #000;
+    margin: 0;
 `
 
-export const MenuRight = styled.a`
+export const Paragrafo = styled.p`
     font-family: 'Open-Sans';
     font-style: normal;
-    font-size: 12px;
-    line-height: 25px;
-    color: #fff;
-    margin-right: 12px;
-    text-decoration: none;
+    font-size: 1.5rem;
+    color: #000;
+    margin: 0;
+    width: 40rem;
+`
+export const Img = styled.img`
+    width: 17rem;
 `
 
-export const UserPictures = styled.img`
-    width: 32px;
-    height: 32px;
-    border-radius: 22px;
-    border: 2px solid #fff:
-`
-
-export const Input = styled.input`
-    background: transparent;
-    flex:1;
-    border: 0;
-    color: #fff;
-
-`
