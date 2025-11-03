@@ -25,6 +25,7 @@ export const Container = styled.div`
     ${({ variant }) => variant === 'secundario' && css`
         padding: 0 0 1rem 0;
         background-color: #dfdddd;
+        margin: .5rem 0;
     `}
 `
 
@@ -64,7 +65,7 @@ export const Content = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 2rem;
+    padding: 0 2rem 2rem 2rem;
     flex: 1;
 `
 
@@ -154,3 +155,36 @@ export const HasInfo = styled.div`
         line-height: 1.375rem;
     }
 `
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  ${({variant}) => variant === 'cima' && css`
+        margin: 0 0 1.5rem 0;
+    `}
+`;
+
+export const PageButton = styled.button`
+  background: ${({ disabled }) => (disabled ? '#323232' : '#000')};
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
+  transition: background 0.3s, transform 0.2s;
+
+  &:hover {
+    background: #565656;
+    transform: scale(1.05);
+  }
+`;
+

@@ -1,17 +1,20 @@
 import React from 'react'
+import { InputContainer, InputText, TextareaText } from './styles'; // Importe TextareaText
 
-import { InputContainer, InputText, ErrorText} from './styles';
-import { Controller } from 'react-hook-form';
-
-const Input = ({name, ...rest}) => {
+const Input = ({name, isTextarea, ...rest}) => {
+  if (isTextarea) {
+     return (
+        <InputContainer {...rest}>
+          <TextareaText name={name} {...rest} />
+        </InputContainer>
+     )
+  }
   return (
     <>
-      <InputContainer>
-        <InputText {...rest} />
+      <InputContainer {...rest}> {/* Passe rest para InputContainer também, para o variant */}
+        <InputText name={name} {...rest} />
       </InputContainer>
     </>
   )
 }
-
 export { Input };
-
