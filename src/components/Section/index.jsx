@@ -13,7 +13,7 @@ const Section = ({ title, paragrafo }) => {
         const fetchRepos = async () => {
             try {
                 const response = await fetch(
-                    `https://api.github.com/users/Juliocer/repos?per_page=${perPage}&page=${page}`
+                    `https://api.github.com/users/Juliocer/repos?per_page=${perPage}&page=${page}&sort=updated&direction=desc`
                 );
                 const data = await response.json();
                 setHasMore(data.length === perPage);
@@ -35,7 +35,7 @@ const Section = ({ title, paragrafo }) => {
                             <Paragrafo>{paragrafo}</Paragrafo>
                         </Colmn>
                     </ContainerMenu>
-
+                    
                     <ContainerRepositorio>
                         {repos.length > 0 ? (
                             repos.map((repo) => (

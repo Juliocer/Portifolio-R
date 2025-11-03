@@ -75,7 +75,7 @@ export const ContainerRepositorio = styled.div`
 `
 
 export const Imagem = styled.img`
-    width: 40%;
+    width: 10rem;
     height: auto;
     background-color: #000;
 `

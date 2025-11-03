@@ -17,7 +17,7 @@ const Projetos = () => {
     const fetchRepos = async () => {
       try {
         const response = await fetch(
-          `https://api.github.com/users/Juliocer/repos?per_page=${perPage}&page=${page}`
+          `https://api.github.com/users/Juliocer/repos?per_page=${perPage}&page=${page}&sort=updated&direction=desc`
         );
         const data = await response.json();
         setHasMore(data.length === perPage);
@@ -28,6 +28,7 @@ const Projetos = () => {
     };
     fetchRepos();
   }, [page])
+
 
   return (
     <>
