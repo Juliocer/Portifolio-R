@@ -57,11 +57,6 @@ const Projetos = () => {
               <React.Fragment key={repo.id}>
                 <Container variant='secundario'>
 
-                  <Row variant='secundario'>
-                    <ImageBackground src={LogoReact} />
-                    <ImageBackground src={LogoReact} />
-                    <ImageBackground src={LogoReact} />
-                  </Row>
                   <Content key={repo.id}>
                     <UserInfo>
                       <UserPicture src='https://avatars.githubusercontent.com/u/143886237?s=400&u=f9b548593f3d61796f405d3e608518a6bbbddcf2&v=4' />
@@ -93,7 +88,7 @@ const Projetos = () => {
           ) : (
             <p>Carregando Projetos...</p>
           )}
-
+          
           <PaginationContainer>
             <PageButton
               onClick={() => setPage((p) => Math.max(1, p - 1))}

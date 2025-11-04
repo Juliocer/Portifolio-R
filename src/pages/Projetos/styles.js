@@ -23,7 +23,7 @@ export const Container = styled.div`
     padding: 8rem 0 5rem 0;
 
     ${({ variant }) => variant === 'secundario' && css`
-        padding: 0 0 1rem 0;
+        padding: 1rem 0 1rem 0;
         background-color: #dfdddd;
         margin: .5rem 0;
     `}
@@ -65,8 +65,7 @@ export const Content = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 2rem 2rem 2rem;
-    flex: 1;
+    padding: 2rem 2rem;
 `
 
 export const UserInfo = styled.div`

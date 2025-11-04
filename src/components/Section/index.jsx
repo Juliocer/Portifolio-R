@@ -35,14 +35,13 @@ const Section = ({ title, paragrafo }) => {
                             <Paragrafo>{paragrafo}</Paragrafo>
                         </Colmn>
                     </ContainerMenu>
-                    
+
                     <ContainerRepositorio>
                         {repos.length > 0 ? (
                             repos.map((repo) => (
                                 <React.Fragment key={repo.id}>
 
                                     <Row>
-                                        <Imagem src='#' />
                                         <Colmn variant='secundario'>
                                             <Menu variant='secundario'> {repo.name} </Menu>
                                             <Paragrafo variant='secundario'> {repo.description ? repo.description : 'Sem descrição disponível.'}{' '} </Paragrafo>
@@ -71,7 +70,7 @@ const Section = ({ title, paragrafo }) => {
                             <ChevronRight size={32} />
                         </PageButton>
                     </PaginationContainer>
-
+                    
                 </Container>
             </Wrapper>
         </>

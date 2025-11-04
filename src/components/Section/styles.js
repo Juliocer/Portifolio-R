@@ -30,9 +30,9 @@ export const Colmn = styled.div`
     flex-direction: column;
 
     ${({ variant }) => variant === "secundario" && css`
-        width: 55%;
         display: flex;
         padding-left: .5rem;
+        flex: 1;
     `}
 `
 
@@ -71,7 +71,7 @@ export const Paragrafo = styled.p`
 
 export const ContainerRepositorio = styled.div`
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
 `
 
 export const Imagem = styled.img`
