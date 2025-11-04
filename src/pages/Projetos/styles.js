@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
     box-sizing: border-box;
-    background-color: #f8f6f6;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -24,7 +23,7 @@ export const Container = styled.div`
 
     ${({ variant }) => variant === 'secundario' && css`
         padding: 1rem 0 1rem 0;
-        background-color: #dfdddd;
+        background-color: #f8f6f6;
         margin: .5rem 0;
     `}
 `

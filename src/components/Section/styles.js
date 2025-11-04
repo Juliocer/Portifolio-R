@@ -12,7 +12,7 @@ export const Container = styled.div`
     width: 1140px;
     display: flex;
     flex-direction: column;
-    padding: 5rem 0 5rem 0;
+    padding: 3rem 0 3rem 0;
 `
 
 export const Row = styled.div`
@@ -20,7 +20,6 @@ export const Row = styled.div`
     align-items: start;
     justify-content: center;
     align-items: center;
-    background-color: #dfdddd;
     margin: 0 .5rem 0 0;
     padding: .5rem;
 `
@@ -53,7 +52,7 @@ export const Menu = styled.h1`
 
     ${({ variant }) => variant === "secundario" && css`
         margin: 0 0 .5rem 0;
-        font-size: 2rem;
+        font-size: 1.5rem;
     ` }
 `
 
@@ -72,6 +71,9 @@ export const Paragrafo = styled.p`
 export const ContainerRepositorio = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: #f8f6f6;
+    padding: .5rem;
+    gap: 1rem;
 `
 
 export const Imagem = styled.img`
@@ -81,6 +83,7 @@ export const Imagem = styled.img`
 `
 
 export const Link = styled.a`
+    width: 50%;
     font-family: 'Open-Sans';
     font-size: 1.3rem;
     color: #000;

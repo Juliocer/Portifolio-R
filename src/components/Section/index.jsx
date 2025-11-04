@@ -7,7 +7,7 @@ const Section = ({ title, paragrafo }) => {
     const [repos, setRepos] = useState([]);
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
-    const perPage = 2;
+    const perPage = 4;
 
     useEffect(() => {
         const fetchRepos = async () => {
@@ -24,7 +24,7 @@ const Section = ({ title, paragrafo }) => {
         };
         fetchRepos();
     }, [page])
-
+    
     return (
         <>
             <Wrapper>

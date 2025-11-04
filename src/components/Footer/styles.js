@@ -12,7 +12,7 @@ export const Container = styled.div`
     width: 1140px;
     display: flex;
     flex-direction: column;
-    padding: 5rem 0 5rem 0;
+    padding: 3rem 0 3rem 0;
 `
 
 export const Row = styled.div`

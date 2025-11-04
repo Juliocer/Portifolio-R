@@ -47,7 +47,7 @@ const Formulario = () => {
               <Input name="email" placeholder="E-mail" type="email" required />
             </Colmn>
           </Row>
-
+          
           <Paragrafo variant="secundario">Assunto</Paragrafo>
           <Input name="assunto" placeholder="Assunto" type="text" required />
 
