@@ -68,7 +68,7 @@ Please change the parent <Route path="${w}"> to <Route path="${w==="/"?"*":`${w}
     width: 1140px;
     display: flex;
     flex-direction: column;
-    padding: 5rem 0 5rem 0;
+    padding: 3rem 0 3rem 0;
 `,Ki=G.div`
     display: flex;
     flex-direction: row;
@@ -365,13 +365,12 @@ Please change the parent <Route path="${w}"> to <Route path="${w==="/"?"*":`${w}
     width: 1140px;
     display: flex;
     flex-direction: column;
-    padding: 5rem 0 5rem 0;
+    padding: 3rem 0 3rem 0;
 `,aS=G.div`
     display: flex;
     align-items: start;
     justify-content: center;
     align-items: center;
-    background-color: #dfdddd;
     margin: 0 .5rem 0 0;
     padding: .5rem;
 `,u0=G.div`
@@ -398,7 +397,7 @@ Please change the parent <Route path="${w}"> to <Route path="${w==="/"?"*":`${w}
 
     ${({variant:u})=>u==="secundario"&&Nt`
         margin: 0 0 .5rem 0;
-        font-size: 2rem;
+        font-size: 1.5rem;
     `}
 `,c0=G.p`
     font-family: 'Open-Sans';
@@ -413,11 +412,15 @@ Please change the parent <Route path="${w}"> to <Route path="${w==="/"?"*":`${w}
 `,uS=G.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: #f8f6f6;
+    padding: .5rem;
+    gap: 1rem;
 `;G.img`
     width: 10rem;
     height: auto;
     background-color: #000;
 `;const iS=G.a`
+    width: 50%;
     font-family: 'Open-Sans';
     font-size: 1.3rem;
     color: #000;
@@ -485,7 +488,7 @@ Please change the parent <Route path="${w}"> to <Route path="${w==="/"?"*":`${w}
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const mS=[["path",{d:"m9 18 6-6-6-6",key:"mthhwq"}]],so=my("chevron-right",mS),yS=({title:u,paragrafo:c})=>{const[f,r]=O.useState([]),[s,h]=O.useState(1),[y,A]=O.useState(!0),v=2;return O.useEffect(()=>{(async()=>{try{const C=await(await fetch(`https://api.github.com/users/Juliocer/repos?per_page=${v}&page=${s}&sort=updated&direction=desc`)).json();A(C.length===v),r(C)}catch(E){console.error("Erro ao buscar repositórios:",E)}})()},[s]),p.jsx(p.Fragment,{children:p.jsx(eS,{children:p.jsxs(lS,{children:[p.jsx(nS,{children:p.jsxs(u0,{children:[p.jsx(i0,{children:u}),p.jsx(c0,{children:c})]})}),p.jsx(uS,{children:f.length>0?f.map(m=>p.jsx(Qe.Fragment,{children:p.jsx(aS,{children:p.jsxs(u0,{variant:"secundario",children:[p.jsxs(i0,{variant:"secundario",children:[" ",m.name," "]}),p.jsxs(c0,{variant:"secundario",children:[" ",m.description?m.description:"Sem descrição disponível."," "," "]}),p.jsx(iS,{href:m.html_url,target:"_blank",rel:"noopener noreferrer",children:"Ver mais"})]})})},m.id)):p.jsx("p",{children:"Carregando Projetos..."})}),p.jsxs(cS,{children:[p.jsx(r0,{onClick:()=>h(m=>Math.max(1,m-1)),disabled:s===1,children:p.jsx(oo,{size:32})}),p.jsx(r0,{onClick:()=>h(m=>m+1),disabled:!y,children:p.jsx(so,{size:32})})]})]})})})},gS=()=>p.jsxs(p.Fragment,{children:[p.jsx(bc,{}),p.jsx($b,{}),p.jsx(yS,{title:"Projetos",paragrafo:"Projeto de Estudos",titleRepositorio:"Projeto",paragrafoRepositorio:"Descrição do projeto",linkRepositorio:"Link do repositorio"}),p.jsx(sy,{}),p.jsx(pc,{})]}),vS="/Portifolio-R/assets/certificado-react-CW5D5Lvi.jpg",pS="/Portifolio-R/assets/certificado-logicaDeProgramacao-BmFjgyMa.jpg",bS="/Portifolio-R/assets/certificado-HTML-C_FCZajS.jpg",SS="/Portifolio-R/assets/certificado-CSS-BOKWTS7f.jpg",AS=G.div`
+ */const mS=[["path",{d:"m9 18 6-6-6-6",key:"mthhwq"}]],so=my("chevron-right",mS),yS=({title:u,paragrafo:c})=>{const[f,r]=O.useState([]),[s,h]=O.useState(1),[y,A]=O.useState(!0),v=4;return O.useEffect(()=>{(async()=>{try{const C=await(await fetch(`https://api.github.com/users/Juliocer/repos?per_page=${v}&page=${s}&sort=updated&direction=desc`)).json();A(C.length===v),r(C)}catch(E){console.error("Erro ao buscar repositórios:",E)}})()},[s]),p.jsx(p.Fragment,{children:p.jsx(eS,{children:p.jsxs(lS,{children:[p.jsx(nS,{children:p.jsxs(u0,{children:[p.jsx(i0,{children:u}),p.jsx(c0,{children:c})]})}),p.jsx(uS,{children:f.length>0?f.map(m=>p.jsx(Qe.Fragment,{children:p.jsx(aS,{children:p.jsxs(u0,{variant:"secundario",children:[p.jsxs(i0,{variant:"secundario",children:[" ",m.name," "]}),p.jsxs(c0,{variant:"secundario",children:[" ",m.description?m.description:"Sem descrição disponível."," "," "]}),p.jsx(iS,{href:m.html_url,target:"_blank",rel:"noopener noreferrer",children:"Ver mais"})]})})},m.id)):p.jsx("p",{children:"Carregando Projetos..."})}),p.jsxs(cS,{children:[p.jsx(r0,{onClick:()=>h(m=>Math.max(1,m-1)),disabled:s===1,children:p.jsx(oo,{size:32})}),p.jsx(r0,{onClick:()=>h(m=>m+1),disabled:!y,children:p.jsx(so,{size:32})})]})]})})})},gS=()=>p.jsxs(p.Fragment,{children:[p.jsx(bc,{}),p.jsx($b,{}),p.jsx(yS,{title:"Projetos",paragrafo:"Projeto de Estudos",titleRepositorio:"Projeto",paragrafoRepositorio:"Descrição do projeto",linkRepositorio:"Link do repositorio"}),p.jsx(sy,{}),p.jsx(pc,{})]}),vS="/Portifolio-R/assets/certificado-react-CW5D5Lvi.jpg",pS="/Portifolio-R/assets/certificado-logicaDeProgramacao-BmFjgyMa.jpg",bS="/Portifolio-R/assets/certificado-HTML-C_FCZajS.jpg",SS="/Portifolio-R/assets/certificado-CSS-BOKWTS7f.jpg",AS=G.div`
     box-sizing: border-box;
     background-color: #f8f6f6;
     width: 100%;
@@ -553,7 +556,6 @@ Please change the parent <Route path="${w}"> to <Route path="${w==="/"?"*":`${w}
     padding: .5rem 0;
 `,jS=()=>{const u=oc(),c=()=>{u("/contato")},f=()=>{u("/projetos")};return p.jsxs(p.Fragment,{children:[p.jsx(bc,{}),p.jsx(AS,{children:p.jsxs(xS,{children:[p.jsxs(ES,{children:[p.jsx(TS,{src:dy,alt:"Foto de Júlio César"}),p.jsx(o0,{children:"Júlio César Santos Franco"}),p.jsx($e,{children:"Saiba mais sobre o que eu faço e minha trajetória."}),p.jsxs($e,{variant:"pequenoParagrafo",children:["Meu nome é Júlio César, tenho 23 anos e sou natural de Salvador. Morar sozinho me ensinou muito sobre responsabilidade, organização e foco — valores que levo comigo em cada projeto de programação.",p.jsx("br",{}),p.jsx("br",{}),"Minha trajetória profissional começou aos 20 anos, na área de telemarketing, onde aprendi sobre comunicação, disciplina e trabalho em equipe. Essa experiência me ajudou a desenvolver habilidades interpessoais que hoje aplico no mundo da tecnologia.",p.jsx("br",{}),p.jsx("br",{}),"Enquanto trabalhava, iniciei o curso técnico de Desenvolvimento de Sistemas no Senai Dendezeiro, conciliando estudos e trabalho em uma rotina intensa. Durante esse período, me aprofundei em JavaScript, TypeScript, Node.js, React e bancos de dados, além de estudar temas como usabilidade e acessibilidade.",p.jsx("br",{}),p.jsx("br",{}),"Também venho me aprimorando constantemente por meio da plataforma DIO, participando de bootcamps e desafios práticos que fortalecem minhas habilidades e ampliam minha visão sobre o desenvolvimento web moderno.",p.jsx("br",{}),p.jsx("br",{}),"Atualmente, estou em busca da minha primeira oportunidade de trabalho na área de desenvolvimento, onde eu possa aplicar meus conhecimentos, continuar aprendendo e contribuir com projetos que impactem positivamente as pessoas.",p.jsx("br",{}),p.jsx("br",{}),"Hoje, sigo em constante evolução, sempre buscando aprender novas tecnologias, escrever códigos cada vez melhores e criar soluções digitais que realmente façam a diferença."]}),p.jsxs(zS,{children:[p.jsx(mn,{title:"Contate-me",variant:"#",onClick:c}),p.jsx(mn,{title:"Veja meu trabalho",variant:"primary",onClick:f})]})]}),p.jsxs(CS,{children:[p.jsx(o0,{variant:"certificado",children:"Certificados"}),p.jsxs(RS,{children:[p.jsxs($i,{children:[p.jsx(ki,{src:vS,alt:"Certificado React"}),p.jsx($e,{}),p.jsx($e,{variant:"pequenoParagrafo"})]}),p.jsxs($i,{children:[p.jsx(ki,{src:pS,alt:"Logica De Prógramação"}),p.jsx($e,{}),p.jsx($e,{variant:"pequenoParagrafo"})]}),p.jsxs($i,{children:[p.jsx(ki,{src:bS,alt:"HTML"}),p.jsx($e,{}),p.jsx($e,{variant:"pequenoParagrafo"})]}),p.jsxs($i,{children:[p.jsx(ki,{src:SS,alt:"CSS"}),p.jsx($e,{}),p.jsx($e,{variant:"pequenoParagrafo"})]})]})]})]})}),p.jsx(pc,{})]})},OS=G.div`
     box-sizing: border-box;
-    background-color: #f8f6f6;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -573,7 +575,7 @@ Please change the parent <Route path="${w}"> to <Route path="${w==="/"?"*":`${w}
 
     ${({variant:u})=>u==="secundario"&&Nt`
         padding: 1rem 0 1rem 0;
-        background-color: #dfdddd;
+        background-color: #f8f6f6;
         margin: .5rem 0;
     `}
 `;G.div`
