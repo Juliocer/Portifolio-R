@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Nav } from '../../components/Nav'
 import { Footer } from '../../components/Footer'
-import LogoReact from '../../assets/certificados.jpg/certificado-react.jpg'
-import LogoHtml from '../../assets/certificados.jpg/certificado-HTML.jpg'
+import { getUserRepos } from '../../services/api'
 
-import { Wrapper, Container, Row, Menu, ImageBackground, Content, UserInfo, UserPicture, PostInfo, HasInfo, PaginationContainer, PageButton } from './styles'
+import { Wrapper, Container, Menu, Content, UserInfo, UserPicture, PostInfo, HasInfo, PaginationContainer, PageButton } from './styles'
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Projetos = () => {
@@ -15,19 +14,13 @@ const Projetos = () => {
 
   useEffect(() => {
     const fetchRepos = async () => {
-      try {
-        const response = await fetch(
-          `https://api.github.com/users/Juliocer/repos?per_page=${perPage}&page=${page}&sort=updated&direction=desc`
-        );
-        const data = await response.json();
-        setHasMore(data.length === perPage);
-        setRepos(data);
-      } catch (error) {
-        console.error('Erro ao buscar repositórios:', error);
-      }
+      const data = await getUserRepos("Juliocer", perPage, page);
+      setHasMore(data.length === perPage);
+      setRepos(data);
     };
+
     fetchRepos();
-  }, [page])
+  }, [page]);
 
 
   return (
@@ -78,7 +71,6 @@ const Projetos = () => {
 
                     <HasInfo>
                       <h4>#{repo.language || 'N/A'}</h4>
-                      <p>⭐ {repo.stargazers_count}</p>
                     </HasInfo>
                   </Content>
 
@@ -88,7 +80,7 @@ const Projetos = () => {
           ) : (
             <p>Carregando Projetos...</p>
           )}
-          
+
           <PaginationContainer>
             <PageButton
               onClick={() => setPage((p) => Math.max(1, p - 1))}

@@ -7,7 +7,6 @@ import Telefone from '../../assets/icone/telefonica.png';
 import Email from '../../assets/icone/email.png';
 import Endereco from '../../assets/icone/endereco.png';
 
-
 const Footer = () => {
   return (
     <Wrapper>
@@ -25,18 +24,18 @@ const Footer = () => {
             </Link>
           </Colmn>
           <Colmn>
-            <Row variant='secundario' >
-              <Link href='' alt='Icone do GitHub'><Img src={Telefone} alt='Logo de um telefone' /></Link>
+            <Link variant='secundario' href='' alt='Icone do GitHub'>
+              <Img src={Telefone} alt='Logo de um telefone' />
               <Paragrafo variant='secundario'>(71) 986277091</Paragrafo>
-            </Row>
-            <Row variant='secundario' >
-              <Link href='' alt='Icone do GitHub'><Img src={Email} alt='Logo do Git' /></Link>
+            </Link>
+            <Link variant='secundario' href='' alt='Icone do GitHub'>
+              <Img src={Email} alt='Logo do Git' />
               <Paragrafo variant='secundario'>contatodejuliocesar@gmail.com</Paragrafo>
-            </Row>
-            <Row variant='secundario' >
-              <Link href='' alt='Icone do GitHub'><Img src={Endereco} alt='Logo do Git' /></Link>
+            </Link>
+            <Link variant='secundario' href='' alt='Icone do GitHub'>
+              <Img src={Endereco} alt='Logo do Git' />
               <Paragrafo variant='secundario'>R. Luiz Régis Pacheco, 246 - Uruguai, Salvador - BA, 40451-360</Paragrafo>
-            </Row>
+            </Link>
           </Colmn>
         </Row>
         <Colmn>
@@ -48,6 +47,7 @@ const Footer = () => {
 }
 
 export { Footer }
+
 
 
 

@@ -2,28 +2,23 @@ import React, { useEffect, useState } from 'react'
 
 import { Wrapper, Container, ContainerMenu, ContainerRepositorio, Imagem, Row, Colmn, Menu, Paragrafo, Link, PaginationContainer, PageButton } from "./styles";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { getUserRepos } from '../../services/api';
 
 const Section = ({ title, paragrafo }) => {
     const [repos, setRepos] = useState([]);
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
-    const perPage = 4;
+    const perPage = 6;
 
     useEffect(() => {
         const fetchRepos = async () => {
-            try {
-                const response = await fetch(
-                    `https://api.github.com/users/Juliocer/repos?per_page=${perPage}&page=${page}&sort=updated&direction=desc`
-                );
-                const data = await response.json();
-                setHasMore(data.length === perPage);
-                setRepos(data);
-            } catch (error) {
-                console.error('Erro ao buscar repositórios:', error);
-            }
+            const data = await getUserRepos("Juliocer", perPage, page);
+            setHasMore(data.length === perPage);
+            setRepos(data);
         };
+
         fetchRepos();
-    }, [page])
+    }, [page]);
     
     return (
         <>
@@ -48,7 +43,7 @@ const Section = ({ title, paragrafo }) => {
                                             <Link href={repo.html_url} target="_blank" rel="noopener noreferrer">Ver mais</Link>
                                         </Colmn>
                                     </Row>
-
+                                    
                                 </React.Fragment>
                             ))
                         ) : (
@@ -70,7 +65,7 @@ const Section = ({ title, paragrafo }) => {
                             <ChevronRight size={32} />
                         </PageButton>
                     </PaginationContainer>
-                    
+
                 </Container>
             </Wrapper>
         </>

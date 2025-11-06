@@ -27,7 +27,7 @@ const Formulario = () => {
         });
     }
   };
-
+  
   return (
     <Wrapper>
       <Container>
@@ -35,7 +35,7 @@ const Formulario = () => {
           <Menu>CONTATE-ME</Menu>
           <Paragrafo>Preencha o formulário abaixo e responderei em breve.</Paragrafo>
         </Colmn>
-
+        
         <form ref={form} onSubmit={sendEmail}>
           <Row>
             <Colmn>

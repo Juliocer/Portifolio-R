@@ -1,63 +1,146 @@
-import React from "react"
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-import Git from '../../assets/icone/github.png';
-import Linkedin from '../../assets/icone/linkedin.png';
-
+import Git from "../../assets/icone/github.png";
+import Linkedin from "../../assets/icone/linkedin.png";
 import { Button } from "../Button";
+
 import {
-    Wrapper,
-    Container,
-    Navegacao,
-    Row,
-    Li,
-    LiItem,
-    Menu,
-    MeuNome,
-    Img
+  Wrapper,
+  Container,
+  Navegacao,
+  Row,
+  Li,
+  LiItem,
+  Menu,
+  MeuNome,
+  Img,
+  MobileIcon,
+  MobileMenu,
 } from "./styles";
 
 const Nav = () => {
-    const navigate = useNavigate();
-    const handleClickSobre = () => {
-        navigate('/sobre')
-    }
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-    const handleClickProjetos = () => {
-        navigate('/projetos')
-    }
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-    const handleClickContato = () => {
-        navigate('/contato')
-    }
+  const handleClick = (path) => {
+    navigate(path);
+    setIsOpen(false);
+  };
 
-    const handleClickHome = () => {
-        navigate('/')
-    }
+  // Detecta redimensionamento da tela para aplicar comportamento dinâmico
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth > 768) setIsOpen(false); // fecha o menu se voltar pro desktop
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    return (
-        <Wrapper>
-            <Container>
-                <Navegacao>
-                    <Row>
-                        <MeuNome onClick={handleClickHome} >Júlio César</MeuNome>
-                    </Row>
-                    <Row>
-                        <Li>
-                            <LiItem><Menu href="#">Home</Menu></LiItem>
-                            <LiItem><Menu onClick={handleClickSobre}>Sobre+Formação</Menu></LiItem>
-                            <LiItem><Menu onClick={handleClickProjetos}>Galeria de Projetos</Menu></LiItem>
-                            <LiItem><Menu onClick={handleClickContato}>Contato</Menu></LiItem>
-                            <LiItem><Button onClick={handleClickContato} title="Entre em Contato" variant='secundario' /></LiItem>
-                            <LiItem><Menu href="https://www.linkedin.com/in/j%C3%BAlio-c%C3%A9sar-santos-franco/" target="_blank" rel="noopener noreferrer"><Img src={Linkedin} alt="Icone do Linkedin"/></Menu></LiItem>
-                            <LiItem><Menu href="https://github.com/Juliocer" target="_blank" rel="noopener noreferrer"><Img src={Git} alt="Icone do GitHub"/></Menu></LiItem>
-                        </Li>
-                    </Row>
-                </Navegacao>
-            </Container>
-        </Wrapper>
-    )
-}
+  return (
+    <Wrapper>
+      <Container>
+        <Navegacao>
+          {/* Nome do site */}
+          <Row>
+            <MeuNome onClick={() => handleClick("/")}>Júlio César</MeuNome>
+          </Row>
 
+          {/* Ícone do menu (visível apenas no mobile) */}
+          <MobileIcon onClick={toggleMenu}>
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </MobileIcon>
 
-export { Nav }
+          {/* Menu Desktop */}
+          {!isMobile && (
+            <Li>
+              <LiItem>
+                <Menu onClick={() => handleClick("/")}>Home</Menu>
+              </LiItem>
+              <LiItem>
+                <Menu onClick={() => handleClick("/sobre")}>
+                  Sobre+Formação
+                </Menu>
+              </LiItem>
+              <LiItem>
+                <Menu onClick={() => handleClick("/projetos")}>
+                  Galeria de Projetos
+                </Menu>
+              </LiItem>
+              <LiItem>
+                <Menu onClick={() => handleClick("/contato")}>Contato</Menu>
+              </LiItem>
+              <LiItem>
+                <Button
+                  onClick={() => handleClick("/contato")}
+                  title="Entre em Contato"
+                  variant="secundario"
+                />
+              </LiItem>
+              <LiItem>
+                <Menu
+                  href="https://www.linkedin.com/in/j%C3%BAlio-c%C3%A9sar-santos-franco/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Img src={Linkedin} alt="Linkedin" />
+                </Menu>
+              </LiItem>
+              <LiItem>
+                <Menu
+                  href="https://github.com/Juliocer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Img src={Git} alt="GitHub" />
+                </Menu>
+              </LiItem>
+            </Li>
+          )}
+        </Navegacao>
+
+        {/* Menu Mobile (dropdown) */}
+        {isMobile && isOpen && (
+          <MobileMenu>
+            <Menu onClick={() => handleClick("/")}>Home</Menu>
+            <Menu onClick={() => handleClick("/sobre")}>Sobre+Formação</Menu>
+            <Menu onClick={() => handleClick("/projetos")}>
+              Galeria de Projetos
+            </Menu>
+            <Menu onClick={() => handleClick("/contato")}>Contato</Menu>
+
+            {/* Botão e ícones no menu mobile */}
+            <Button
+              onClick={() => handleClick("/contato")}
+              title="Entre em Contato"
+              variant="secundario"
+            />
+            <Row style={{ marginTop: "1rem", gap: "1rem" }}>
+              <a
+                href="https://www.linkedin.com/in/j%C3%BAlio-c%C3%A9sar-santos-franco/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Img src={Linkedin} alt="Linkedin" />
+              </a>
+              <a
+                href="https://github.com/Juliocer"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Img src={Git} alt="GitHub" />
+              </a>
+            </Row>
+          </MobileMenu>
+        )}
+      </Container>
+    </Wrapper>
+  );
+};
+
+export { Nav };
